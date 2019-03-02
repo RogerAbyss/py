@@ -66,6 +66,5 @@ def main():
             logging.info("运行10分钟, 休息2分钟")
             starttime = datetime.datetime.now()
 
-
 if __name__ == '__main__':
     main()
