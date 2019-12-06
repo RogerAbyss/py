@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
 import wda
+# import facebook-wda
 import logging
 import os
 import random
 from time import sleep
 import time
 import json
-import sys
-import datetime
+
+# iphone 8 plus
+# "screen": {"x":736, "y":414},
 
 # 日志输出
 logging.basicConfig(format='[%(asctime)s][%(name)s:%(levelname)s(%(lineno)d)][%(module)s:%(funcName)s]:%(message)s',
@@ -23,6 +25,7 @@ with open("{path}/devices/iphone8Plus.json".format(path=sys.path[0],), 'r') as f
 time_repeat = config["time"]
 btn_replay  = config["button_replay"]
 btn_start = config["button_start"]
+btn_new = config["button_new"]
 screen = config["screen"]
 
 
@@ -37,6 +40,12 @@ def event_replay():
 def event_start():
     logging.info("点击-开始")
     tap_screen(btn_start)
+    sleep(time_repeat)
+
+
+def event_new():
+    logging.info("点击-新按钮-结束")
+    tap_screen(btn_new)
     sleep(time_repeat)
 
 def tap_screen(point):
@@ -57,6 +66,7 @@ def main():
     while True:
         event_start()
         event_replay()
+        event_new()
         time.sleep(random.uniform(time_repeat,time_repeat+1))
 
         runTime = datetime.datetime.now() - starttime

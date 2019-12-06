@@ -1,6 +1,7 @@
 {
-  "screen": {"x":736, "y":414},
+  "screen": {"x":568, "y":320},
   "button_replay": {"x":1600,"y":1000},
   "button_start": {"x":1500,"y":900},
-  "time": 2
+  "button_new": {"x":1960,"y":1200},
+  "time": 1.5
 }
